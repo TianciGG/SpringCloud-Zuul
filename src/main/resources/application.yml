@@ -1,0 +1,17 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://www.chauncywang.com:8888/eureka/
+server:
+  port: 8678
+spring:
+  application:
+    name: SpringCloud-Zuul
+zuul:
+  routes:
+    api-a:
+     path: /api-a/**
+     service-id: SpringCloud-Ribbon
+    api-b:
+     path: /api-b/**
+     service-id: SpringCloud-Feign
